@@ -13,6 +13,8 @@ from redis.asyncio import Redis
 from sqlalchemy import text
 
 from app.api.routes.auth import router as auth_router
+from app.api.routes.capture import router as capture_router
+from app.api.routes.events import router as events_router
 from app.config import get_settings
 from app.db.session import async_engine
 
@@ -20,6 +22,8 @@ settings = get_settings()
 
 app = FastAPI(title="Neo AI V1", version="0.1.0")
 app.include_router(auth_router)
+app.include_router(capture_router)
+app.include_router(events_router)
 
 app.add_middleware(
     CORSMiddleware,
