@@ -1,5 +1,5 @@
-﻿from functools import lru_cache
-import os
+﻿import os
+from functools import lru_cache
 from pathlib import Path
 from urllib.parse import urlparse, urlunparse
 
